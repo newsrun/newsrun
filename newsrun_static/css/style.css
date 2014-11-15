@@ -1318,6 +1318,17 @@
 		text-align: center;
 	}
 
+	#footer.alt {
+		-moz-animation: none;
+		-webkit-animation: none;
+		-o-animation: none;
+		-ms-animation: none;
+		animation: none;
+		background: none;
+		color: rgba(255, 255, 255, 0.75);
+		position: absolute;
+	}
+
 		#footer .icons a {
 			-moz-transition: opacity 0.2s ease-in-out;
 			-webkit-transition: opacity 0.2s ease-in-out;
@@ -1422,3 +1433,21 @@
 		#cta .formerize-placeholder {
 			color: rgba(255, 255, 255, 0.75) !important;
 		}
+
+
+			/* LOGIN */
+		#login {
+			background-attachment: scroll,	fixed;
+			background-position: top left,	center center;
+			background-repeat: repeat,	no-repeat;
+			background-size: auto,	cover;
+			color: #fff;
+			padding-top: 2em;
+			text-align: center;
+		}
+
+		#login h2{
+			color: #fff;
+		}
+
+		#login
