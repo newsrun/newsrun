@@ -26,7 +26,7 @@ class News_Helper
           t.Body = rec['Body']
           t.Url = rec['Url']
           t.ReleaseDate = rec['ReleaseDate']
-          t.PhotoLink = rec['PhotoLink'].to_s
+          t.PhotoLink = rec['PhotoLink'].to_json
           #t. = recode['']       
       end
     end
