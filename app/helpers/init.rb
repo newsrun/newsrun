@@ -1,2 +1,3 @@
 require 'twitter'
+require 'rakuten'
 

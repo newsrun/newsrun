@@ -10,4 +10,5 @@ gem 'sinatra-activerecord'
 gem 'warden'
 gem 'haml'
 gem 'twitter'
-
+gem 'google-api-client'
+gem 'rest-client'
