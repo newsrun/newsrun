@@ -25,9 +25,7 @@ module FetchNews
 	  	object = JSON.parse(res.body)
 
 	  	object['response']['result']['doc']
-
 	end
-
 end
 
 class Param
@@ -44,7 +42,7 @@ class Param
 
 
 	def url_string
-		p instance_variables 
+		#p instance_variables 
 		params = instance_variables.map do |var|
 			val = instance_variable_get var
 			"#{var[1..-1]}=#{val}"
