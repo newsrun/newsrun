@@ -9,3 +9,5 @@ gem 'sqlite3'
 gem 'sinatra-activerecord'
 gem 'warden'
 gem 'haml'
+gem 'twitter'
+
