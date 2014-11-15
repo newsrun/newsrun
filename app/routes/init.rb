@@ -1,4 +1,4 @@
 require_relative 'index'
-require_relative 'admin'
+require_relative 'event'
 
 

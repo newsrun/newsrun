@@ -2,10 +2,10 @@ require 'sinatra'
 require 'sinatra/base'
 require 'haml'
 require 'active_record'
+require_relative 'config/environments'
 require_relative 'routes/init'
 require_relative 'helpers/init'
 require_relative 'models/init'
-
 
 class GenApp < Sinatra::Base
   enable :method_override
