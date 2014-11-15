@@ -19,13 +19,15 @@ class Twitter_Helper
 
   def search key, place = nil, count = nil
     client = self.get_client
-    client.search(key, result_type: "recent").take(3).each do |tweet|
+    client.search(key, result_type: "recent").take(10).each do |tweet|
       puts tweet.text
     end
   end
 end
 
-
-helper = Twitter_Helper.new
-key = "江ノ島"
-helper.search key
+debug = true
+if debug
+  helper = Twitter_Helper.new
+  key = "紅葉"
+  helper.search key
+end
