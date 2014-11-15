@@ -23,7 +23,7 @@
           %a(href="#") app
     .content.container-fluid
       .row
-        .col-sm-3.col-md-2.sidebar(role="navigation")
+        .col-sm-3.col-md-2.sidebar.newslist(role="navigation")
           %ul.nav.nav-sidebar
             %li
               %h3 Play list
@@ -38,9 +38,9 @@
             %li
               %a(href="#") News 5
           
-        .col-sm-9.col-md-10.main
-          .sb-slidebar.sb-left csscsdcsdcsd
-          #sb-site
+        .col-sm-9.col-md-10.main.newsmain
+          #newscontent.newscontent-cl csscsdcsdcsd
+          #newsplayer.newsplayer
             %h1.page-header News Player
             #player
               %button#ex1-play.btn-lg.btn-primary.btn play
@@ -72,10 +72,10 @@
     $(document).ready(function() {
     $(".sb-toggle-left").click(function(){
     if (toggle) {
-    $(".newscontent").removeClass("newscontent-cl").addClass("newscontent-lg");
+    $("#newscontent").removeClass("newscontent-cl").addClass("newscontent-lg");
     
     } else {
-    $(".newscontent").removeClass("newscontent-lg").addClass("newscontent-cl");
+    $("#newscontent").removeClass("newscontent-lg").addClass("newscontent-cl");
     //$(".sb-slidebar").css("display", "none");
     }
     toggle = !toggle;

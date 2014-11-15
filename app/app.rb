@@ -1,6 +1,7 @@
+require 'sinatra'
 require 'sinatra/base'
 require 'haml'
-#require 'active_record'
+require 'active_record'
 require_relative 'routes/init'
 require_relative 'helpers/init'
 require_relative 'models/init'

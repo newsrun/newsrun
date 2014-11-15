@@ -1,0 +1,35 @@
+.newslist {
+  background:black;
+  z-index:100;
+}
+.player-lg {}
+.player-sm {}
+
+#newscontent {
+  float:left;
+  //position:absolute;
+  transition: all 10s;
+  -moz-transition: all 3s;
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  box-shadow: 5px 5px 5px -5px black;
+  -moz-box-shadow: 5px 5px 5px -5px black;
+  -webkit-box-shadow:5px 5px 5px -5px black;
+}
+#newsplayer {
+  float:left;
+}
+.newsmain {
+  z-index:10;
+}
+.newscontent-lg {
+  visibility:visible;
+  width:70%;
+  //margin-left:300px;
+}
+.newscontent-cl {
+  //display:none;
+  visibility:hidden;
+  width:70%;
+  margin-left:-70%
+}
