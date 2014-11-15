@@ -82,7 +82,7 @@ def set_marker_map_test
   puts helper.set_marker_map(config)
 end
 
-debug = true
+debug = false
 if debug
   get_map_test
 
