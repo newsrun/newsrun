@@ -1,11 +1,8 @@
-
-
-
 class GenApp < Sinatra::Base
 
   get '/event' do
     @events = Event.all
-    erb :event_test
+    erb :index
   end
 
 end
