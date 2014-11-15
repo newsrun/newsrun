@@ -1,5 +1,5 @@
 require 'yaml'
-require_relative 'rest_helper'
+require_relative 'rest'
 
 class Rakuten_Helper
   def get_config
@@ -26,7 +26,7 @@ class Rakuten_Helper
   
 end
 
-debug = true
+debug = false
 
 if debug
   helper = Rakuten_Helper.new
