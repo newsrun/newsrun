@@ -8,16 +8,11 @@ class News_Helper
   include FetchNews
 
   def create_recode
-    #News.create( :title=>"titleffdfdf" ) do |t|
-    #  t.content = 'content'
-    #  t.url = 'this is a url'
-    #  t.datetime = '2014.4.14'
-    #end
     recodes = fetch_from_asahi_api do |params|
       params.start = '1'
       params.rows = '20'
-      params.q = 'Title:*祭り*'  
-    end 
+      params.q = 'Title:*祭り*'
+    end
 
     recodes.each do |rec|
 
@@ -27,7 +22,7 @@ class News_Helper
           t.Url = rec['Url']
           t.ReleaseDate = rec['ReleaseDate']
           t.PhotoLink = rec['PhotoLink'].to_json
-          #t. = recode['']       
+          #t. = recode['']
       end
     end
 

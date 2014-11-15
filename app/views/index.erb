@@ -87,118 +87,37 @@
   </div>
 
 	<div class="section" id="section1">
-	    <div class="slide active">
+		<% @news.each do |item| %>
 
-      <!-- Main -->
-			<section id="main" class="container">
-				<header>
-					<h2>おめで鯛、料理も祭りも紹介</h2>
-					<p>愛知・碧南海浜水族館</p>
-				</header>
-				<div class="box">
-					<span class="image featured"><img src="img/1.jpg" alt="" /></span>
-					<h3>紹介</h3>
-					<p>祝いの席に欠かせない縁起物のタイの生態展示や、タイ料理、玩具などを紹介する正月のミニ企画展「あけましておめで鯛（たい）」が、愛知県碧南市の碧南海浜水族館で来年１月１３日まで開かれている。
-　飼育しているマダイ、チダイ、クロダイなど４種類数十匹のタイから、各種１匹ずつを２基の水槽で展示した。タイ料理では、かぶと煮や塩釜焼き、生き作り（舟盛り）、タイそうめん、タイの形をした祝い砂糖など日本各地の代表的なものを食品サンプルで展示している。
-　このほか、竹と和紙で作った張り子のタイに車をつけてひき回す新潟県の郷土玩具「鯛車（たいぐるま）」や、南知多町豊浜の奇祭「鯛まつり」のミニチュア版みこしも。全長約１・７メートルあり、迫力満点だ。いずれも兵庫県・姫路市立水族館から借り受けた。企画展のパーティションは、すべて職員の手作り。来年の干支（えと）にちなんだウマヅラハギも水族館で遊泳中。年内は２９日まで。１月２日から開館。</p>
-					<div class="row">
-						<div class="6u 12u(3)">
-							<h3>And now a subheading</h3>
-							<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-						</div>
-						<div class="6u 12u(3)">
-							<h3>And another subheading</h3>
-							<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
+			<% photo = JSON.parse(item.PhotoLink)['photodata'][0]['photo_url'] %>
+			<div class="slide">
+				<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h3><%= item.Title %></h3>
+						<p><%= item.ReleaseDate %></p>
+					</header>
+					<div class="box">
+						<span class="image featured"><img src="<%= photo %>" alt="" /></span>
+						<h3>紹介</h3>
+						<p><%= item.Body %></p>
+
+						<div class="row">
+							<!-- Google Maps -->
+							<div class="6u 12u(3)">
+								<h3>And now a subheading</h3>
+								<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
+							</div>
+							<!-- Twitter Maps -->
+							<div class="6u 12u(3)">
+								<h3>And another subheading</h3>
+								<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-
-      </div>
-	    <div class="slide">
-
-        <!-- Main -->
-        <section id="main" class="container">
-          <header>
-            <h2>TEST</h2>
-            <p>愛知・碧南海浜水族館</p>
-          </header>
-          <div class="box">
-            <span class="image featured"><img src="img/2.jpg" alt="" /></span>
-            <h3>紹介</h3>
-            <p>祝いの席に欠かせない縁起物のタイの生態展示や、タイ料理、玩具などを紹介する正月のミニ企画展「あけましておめで鯛（たい）」が、愛知県碧南市の碧南海浜水族館で来年１月１３日まで開かれている。
-  　飼育しているマダイ、チダイ、クロダイなど４種類数十匹のタイから、各種１匹ずつを２基の水槽で展示した。タイ料理では、かぶと煮や塩釜焼き、生き作り（舟盛り）、タイそうめん、タイの形をした祝い砂糖など日本各地の代表的なものを食品サンプルで展示している。
-  　このほか、竹と和紙で作った張り子のタイに車をつけてひき回す新潟県の郷土玩具「鯛車（たいぐるま）」や、南知多町豊浜の奇祭「鯛まつり」のミニチュア版みこしも。全長約１・７メートルあり、迫力満点だ。いずれも兵庫県・姫路市立水族館から借り受けた。企画展のパーティションは、すべて職員の手作り。来年の干支（えと）にちなんだウマヅラハギも水族館で遊泳中。年内は２９日まで。１月２日から開館。</p>
-            <div class="row">
-              <div class="6u 12u(3)">
-                <h3>And now a subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-              </div>
-              <div class="6u 12u(3)">
-                <h3>And another subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-	    <div class="slide">
-
-        <!-- Main -->
-        <section id="main" class="container">
-          <header>
-            <h2>TEST 3</h2>
-            <p>愛知・碧南海浜水族館</p>
-          </header>
-          <div class="box">
-            <span class="image featured"><img src="img/3.jpg" alt="" /></span>
-            <h3>紹介</h3>
-            <p>祝いの席に欠かせない縁起物のタイの生態展示や、タイ料理、玩具などを紹介する正月のミニ企画展「あけましておめで鯛（たい）」が、愛知県碧南市の碧南海浜水族館で来年１月１３日まで開かれている。
-  　飼育しているマダイ、チダイ、クロダイなど４種類数十匹のタイから、各種１匹ずつを２基の水槽で展示した。タイ料理では、かぶと煮や塩釜焼き、生き作り（舟盛り）、タイそうめん、タイの形をした祝い砂糖など日本各地の代表的なものを食品サンプルで展示している。
-  　このほか、竹と和紙で作った張り子のタイに車をつけてひき回す新潟県の郷土玩具「鯛車（たいぐるま）」や、南知多町豊浜の奇祭「鯛まつり」のミニチュア版みこしも。全長約１・７メートルあり、迫力満点だ。いずれも兵庫県・姫路市立水族館から借り受けた。企画展のパーティションは、すべて職員の手作り。来年の干支（えと）にちなんだウマヅラハギも水族館で遊泳中。年内は２９日まで。１月２日から開館。</p>
-            <div class="row">
-              <div class="6u 12u(3)">
-                <h3>And now a subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-              </div>
-              <div class="6u 12u(3)">
-                <h3>And another subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-	    <div class="slide">
-
-        <!-- Main -->
-        <section id="main" class="container">
-          <header>
-            <h2>TEST4</h2>
-            <p>愛知・碧南海浜水族館</p>
-          </header>
-          <div class="box">
-            <span class="image featured"><img src="img/1.jpg" alt="" /></span>
-            <h3>紹介</h3>
-            <p>祝いの席に欠かせない縁起物のタイの生態展示や、タイ料理、玩具などを紹介する正月のミニ企画展「あけましておめで鯛（たい）」が、愛知県碧南市の碧南海浜水族館で来年１月１３日まで開かれている。
-  　飼育しているマダイ、チダイ、クロダイなど４種類数十匹のタイから、各種１匹ずつを２基の水槽で展示した。タイ料理では、かぶと煮や塩釜焼き、生き作り（舟盛り）、タイそうめん、タイの形をした祝い砂糖など日本各地の代表的なものを食品サンプルで展示している。
-  　このほか、竹と和紙で作った張り子のタイに車をつけてひき回す新潟県の郷土玩具「鯛車（たいぐるま）」や、南知多町豊浜の奇祭「鯛まつり」のミニチュア版みこしも。全長約１・７メートルあり、迫力満点だ。いずれも兵庫県・姫路市立水族館から借り受けた。企画展のパーティションは、すべて職員の手作り。来年の干支（えと）にちなんだウマヅラハギも水族館で遊泳中。年内は２９日まで。１月２日から開館。</p>
-            <div class="row">
-              <div class="6u 12u(3)">
-                <h3>And now a subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-              </div>
-              <div class="6u 12u(3)">
-                <h3>And another subheading</h3>
-                <p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </div>
+				</section>
+			</div>
+		<% end %>
 	</div>
 
 </div>

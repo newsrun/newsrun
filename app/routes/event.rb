@@ -1,7 +1,9 @@
+require "json"
+
 class GenApp < Sinatra::Base
 
   get '/event' do
-    @events = Event.all
+    @news = News.all
     erb :index
   end
 
