@@ -16,12 +16,33 @@ class Twitter_Helper
     }
     client = Twitter::REST::Client.new(config)
   end
-
+  
+ 
   def search key, place = nil, count = nil
     client = self.get_client
-    client.search(key, result_type: "recent").take(10).each do |tweet|
-      puts tweet.text
+    tarr = Array.new
+    client.search(key, result_type: "recent").take(100).each do |tweet|
+      if tweet.media != nil
+        tweet.media.each do |m|
+          pics = nil
+          
+          if m != nil
+            pics = Array.new
+            if  m.attrs.has_key? :media_url
+              pics.push({:pic => m.attrs[:media_url]})
+              
+            end
+          end
+          if pics != nil
+            tarr.push({:text => tweet.full_text, :created_at => tweet.created_at, :pics => pics});
+          end
+          if (tarr.length >= 10) 
+            break
+          end
+        end
+      end
     end
+    tarr
   end
 end
 
@@ -29,5 +50,5 @@ debug = true
 if debug
   helper = Twitter_Helper.new
   key = "紅葉"
-  helper.search key
+  puts helper.search key
 end

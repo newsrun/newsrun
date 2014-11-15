@@ -22,13 +22,23 @@ class Rakuten_Helper
     result = resthelper.get gis_url, params
     
   end
-
+  
+  def search_area_code
+    conf = self.get_config
+    area_code_url = conf['travel_area_code']
+    params = {
+      :applicationId => conf['app_id'],
+      :format => :json
+    }
+    resthelper = Rest_Helper.new
+    result = resthelper.get area_code_url, params
+  end
   
 end
 
-debug = false
+debug = true
 
 if debug
   helper = Rakuten_Helper.new
-  puts helper.search_gis 128440.51, 503172.21, 1
+  puts helper.search_area_code
 end
