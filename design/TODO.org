@@ -1,0 +1,7 @@
+#+TITLE: Take
+#+AUTHOR: Hiro Gen
+
+
+* TODO convert dashboard into haml
+* TODO Build the User System
+
