@@ -4,14 +4,14 @@ require 'googlestaticmap'
 
 class Google_Map_Helper
 
-  def get_map (config)
+  def get_map (config = {"zoom" => 11})
     location = MapLocation.new(:latitude => config['latitude'], :longitude => config['longitude'])
     map = GoogleStaticMap.new(:zoom => config['zoom'], :center => location)
 
     map.get_map
   end
 
-  def get_img_url (config)
+  def get_img_url (config = {"zoom" => 11})
     location = MapLocation.new(:latitude => config['latitude'], :longitude => config['longitude'])
     map = GoogleStaticMap.new(:zoom => config['zoom'], :center => location)
 
@@ -24,6 +24,16 @@ class Google_Map_Helper
     markers.each do |marker|
       map.markers << MapMarker.new(marker)
     end
+
+    map.url
+  end
+
+  def set_marker_map(config)
+    puts config
+    location = MapLocation.new(:latitude => config['latitude'], :longitude => config['longitude'])
+    map = GoogleStaticMap.new(:zoom => config['zoom'], :center => location)
+
+    map.markers << MapMarker.new(config['marker'])
 
     map.url
   end
@@ -60,6 +70,18 @@ def set_markers_get_map_test
   puts helper.set_markers_map(markers)
 end
 
+def set_marker_map_test
+  helper = Google_Map_Helper.new
+
+  config = {"latitude" => "35.6091172", "longitude" => "139.7733262", "zoom" => 11}
+
+  config['marker'] = {:color => 'red', :location => MapLocation.new(:latitude => "35.6091172", :longitude => "139.7733262")}
+
+  puts config
+
+  puts helper.set_marker_map(config)
+end
+
 debug = true
 if debug
   get_map_test
@@ -67,5 +89,7 @@ if debug
   get_img_url_test
 
   set_markers_get_map_test
+
+  set_marker_map_test
 
 end
