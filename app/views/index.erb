@@ -98,31 +98,30 @@
 						<p><%= item.ReleaseDate %></p>
 					</header>
 					<div class="box">
-						<span class="image featured"><img src="<%= photo %>" alt="" /></span>
+						<span class="image featured" style="height:400px;overflow:hidden"><img src="<%= photo %>" alt="" /></span>
 						<h3>紹介</h3>
 						<p><%= item.Body %></p>
 
 						<div class="row">
 							<div class="6u 12u(2)">
 								<section class="box special">
-									<span class="image featured"><img src="<%= @google_url %>" alt=""></span>
-									<h3>Sed lorem adipiscing</h3>
-									<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+									<h3>Recent Hotels</h3>
+									<span class="image featured" style="height:200px;overflow:hidden"><img src="<%= @google_url %>" alt=""></span>
 									<ul class="actions">
-										<li><a href="#" class="button alt">Learn More</a></li>
+										<li><a href="<%= @google_url %>" class="button alt" target="_blank">Details</a></li>
 									</ul>
 								</section>
 							</div>
-							<!-- Google Maps -->
-							<!-- <div class="6u 12u(3)">
-								<h3>And now a subheading</h3>
-								<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-							</div> -->
-							<!-- Twitter Maps -->
-							<!-- <div class="6u 12u(3)">
-								<h3>And another subheading</h3>
-								<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
-							</div> -->
+							<div class="6u 12u(2)">
+								<section class="box special">
+									<h3>Most Related Twitters</h3>
+									<span class="image featured" style="height:200px;overflow:hidden"><img src="<%= @twitter_content[:pics]%>" alt=""></span>
+									<p><%= @twitter_content[:text] %></p>
+									<ul class="actions">
+										<li><a href="<%= @twitter_content[:url] %>" class="button alt" target="_blank">Details</a></li>
+									</ul>
+								</section>
+							</div>
 						</div>
 					</div>
 				</section>
