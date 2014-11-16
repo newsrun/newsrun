@@ -1,4 +1,4 @@
-$JAPEN_PLACES = {
+$JAPAN_PLACES = {
 	'網走川' => true,
 	'網走湖' => true,
 	'網走市' => true,

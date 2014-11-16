@@ -3,4 +3,4 @@ require_relative 'rest'
 require_relative 'rakuten'
 require 'twitter'
 require_relative 'news'
-
+require_relative 'keyword'

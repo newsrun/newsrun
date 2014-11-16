@@ -1,0 +1,13 @@
+
+<%
+@keywords.each do |kw|
+%>
+<%= "Keyword: #{kw['keyword']}"%>
+
+<%= "Place: #{kw['place']}"%>
+
+<%= "Date: #{kw['date']}"%>
+<%= "=====================\n" %>
+<%
+end
+%>
