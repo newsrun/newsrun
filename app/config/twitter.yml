@@ -1,8 +1,8 @@
-api_key: USAxxPai0iMxdZgkoxQ3z4qsg
-api_secret: hj7QjzVoR8n3sXpCgOybDRikcdJ9NeXnGIKy324DpmZebpKwkJ
+api_key: SnRKjZQT5EExSfaHCHeMccxNi
+api_secret: uZKfEIojcBvFPM7KiiEFiOX6CHvNqTmpQVLfO5OUP4m9IhxNw6
 owner: clongbupt
 owner_id: 381293295
-callback_url: http://newsrun.cloudapp.net
+callback_url: http://toratora.cloudapp.net
 app_only_auth: https://api.twitter.com/oauth2/token
 request_token_url: https://api.twitter.com/oauth/request_token
 auth_url: https://api.twitter.com/oauth/authorize

@@ -20,7 +20,7 @@ class Twitter_Helper
   def search key, place = nil, count = nil
     client = self.get_client
     tarr = Array.new
-    client.search(key, result_type: "recent").take(30).each do |tweet|
+    client.search(key, result_type: "popular").take(30).each do |tweet|
       if tweet.media != nil
         tweet.media.each do |m|
           pics = nil
