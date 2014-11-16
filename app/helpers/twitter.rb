@@ -46,7 +46,7 @@ class Twitter_Helper
   end
 end
 
-debug = true
+debug = false
 if debug
   helper = Twitter_Helper.new
   key = "紅葉"

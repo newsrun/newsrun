@@ -36,7 +36,7 @@ class Rakuten_Helper
   
 end
 
-debug = true
+debug = false
 
 if debug
   helper = Rakuten_Helper.new
