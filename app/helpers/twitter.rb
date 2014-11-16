@@ -17,7 +17,6 @@ class Twitter_Helper
     client = Twitter::REST::Client.new(config)
   end
 
-
   def search key, place = nil, count = nil
     client = self.get_client
     tarr = Array.new
@@ -26,7 +25,11 @@ class Twitter_Helper
         tweet.media.each do |m|
           pics = nil
           url = tweet.full_text.split(' ')[-1]
-          full_text = tweet.full_text.split(' ')[0...-1].join(' ')
+          if url =~ /^http/
+            full_text = tweet.full_text.split(' ')[0...-1].join(' ').byteslice(0..79)
+          else
+            break
+          end
           if m != nil
             pics = Array.new
             if  m.attrs.has_key? :media_url

@@ -87,7 +87,7 @@
   </div>
 
 	<div class="section" id="section1">
-		<% @news.each do |item| %>
+		<% @news.each_with_index do |item, index| %>
 
 			<% photo = JSON.parse(item.PhotoLink)['photodata'][0]['photo_url'] %>
 			<div class="slide">
@@ -102,26 +102,21 @@
 						<h3>紹介</h3>
 						<p><%= item.Body %></p>
 
+						<h3>Most Related Twitters</h3>
 						<div class="row">
-							<div class="6u 12u(2)">
-								<section class="box special">
-									<h3>Recent Hotels</h3>
-									<span class="image featured" style="height:200px;overflow:hidden"><img src="<%= @google_url %>" alt=""></span>
-									<ul class="actions">
-										<li><a href="<%= @google_url %>" class="button alt" target="_blank">Details</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="6u 12u(2)">
-								<section class="box special">
-									<h3>Most Related Twitters</h3>
-									<span class="image featured" style="height:200px;overflow:hidden"><img src="<%= @twitter_content[:pics]%>" alt=""></span>
-									<p><%= @twitter_content[:text] %></p>
-									<ul class="actions">
-										<li><a href="<%= @twitter_content[:url] %>" class="button alt" target="_blank">Details</a></li>
-									</ul>
-								</section>
-							</div>
+							<% @twitters[index].each do |twitter|%>
+								<div class="3u 12u(2)">
+									<section class="box special" style="padding-top:0;">
+										<span class="image featured" style="height:100px;overflow:hidden"><img src="<%= twitter[:pics]%>" alt=""></span>
+									</section>
+									<section class="box special" style="padding: 0 0 3em 0;">
+										<p style="font-size: 12px;"><%= twitter[:text] %></p>
+										<ul class="actions">
+											<li><a href="<%= twitter[:url] %>" class="button alt" target="_blank">Details</a></li>
+										</ul>
+									</section>
+								</div>
+							<% end %>
 						</div>
 					</div>
 				</section>
