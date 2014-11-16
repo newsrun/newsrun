@@ -88,8 +88,8 @@
 
 	<div class="section" id="section1">
 		<% @news.each do |item| %>
-
-			<% photo = JSON.parse(item.PhotoLink)['photodata'][0]['photo_url'] %>
+			<% photo_link = JSON.parse(item.PhotoLink) %>
+			<% photo = photo_link['photodata'][0]['photo_url'] if not photo_link['photodata'].empty? %>
 			<div class="slide">
 				<!-- Main -->
 				<section id="main" class="container">

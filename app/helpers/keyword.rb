@@ -9,6 +9,9 @@ class Keyword_Helper
 		news_helper = News_Helper.new
 		while count < n
 			rec = news_helper.fetch_next
+			if rec['PhotoLink']['photodata'].empty?
+				next	
+			end
 			keyword = extract_keywords_from_record rec
 			if not keyword.nil?
 				count += 1
