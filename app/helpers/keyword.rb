@@ -125,7 +125,7 @@ class Keyword_Helper
 	
 	def is_a_place? (s)
  		['','県','都','府','市','町'].each do |postfix|
- 			if $JAPAN_PLACES[s+postfix]	
+ 			if not $JAPAN_PLACES[s+postfix].nil?
  				return true
  			end
  		end
