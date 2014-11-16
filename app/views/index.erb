@@ -46,7 +46,7 @@
 <body>
 
 <div id="header">
-  <h1><a href="#">NEWSRUN</a></h1>
+  <h1><a href="#">MATSURI RUN</a></h1>
 	<nav id="nav">
 		<ul>
 			<li><a href="/">Home</a></li>
@@ -64,7 +64,7 @@
 
 <div id="footer">
 	<ul class="copyright">
-		<li>&copy; 2014 Newsrun. All rights reserved.</li><li>Design: <a href="http://github.com/newsrun">Newsrun</a></li>
+		<li>&copy; 2014 MATSURI RUN. All rights reserved.</li><li>Design: <a href="http://github.com/newsrun">MATSURI RUN</a></li>
 	</ul>
 </div>
 
@@ -72,7 +72,7 @@
 	<div class="section active" id="section0">
 
     <section id="banner">
-			<h2>Newsrun</h2>
+			<h2>MATSURI RUN</h2>
 			<p>Provide the best service to run. Run is travel.</p>
 			<ul class="actions">
 				<% if session.has_key?(:email) && ! session[:email].empty? %>
@@ -94,17 +94,16 @@
 				<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h3><%= item.Title %></h3>
-						<p><%= item.ReleaseDate %></p>
+						<h3><%= "【#{item.ReleaseDate.to_date}】#{item.Title}" %></h3>
+						<p><%= "朝日新聞 #{item.ReleaseDate}" %></p>
 					</header>
 					<div class="box">
 						<span class="image featured" style="height:400px;overflow:hidden"><img src="<%= photo %>" alt="" /></span>
-						<h3>紹介</h3>
+						<h3>ニュース内容</h3>
 						<p><%= item.Body %></p>
 
 						<p>Most Related Twitters</p>
-
-						<div class="row" style="margin-top:10px;">
+						<div class="row">
 							<% @twitters[index].each do |twitter|%>
 								<div class="6u 12u(2)" style="height:600px;">
 									<section class="box special" style="padding-top:0;">
@@ -154,3 +153,4 @@
 
 </body>
 </html>
+>>>>>>> 8235e48f8a4cf863224691f183d0f2a1f9beeddb
