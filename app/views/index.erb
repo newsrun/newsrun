@@ -102,15 +102,13 @@
 						<h3>紹介</h3>
 						<p><%= item.Body %></p>
 
-						<h3>Most Related Twitters</h3>
+						<p>Most Related Twitters</p>
 						<div class="row">
 							<% @twitters[index].each do |twitter|%>
-								<div class="3u 12u(2)">
+								<div class="6u 12u(2)" style="height:600px;">
 									<section class="box special" style="padding-top:0;">
-										<span class="image featured" style="height:100px;overflow:hidden"><img src="<%= twitter[:pics]%>" alt=""></span>
-									</section>
-									<section class="box special" style="padding: 0 0 3em 0;">
-										<p style="font-size: 12px;"><%= twitter[:text] %></p>
+										<span class="image featured" style="height:200px;overflow:hidden"><img src="<%= twitter[:pics]%>" alt=""></span>
+										<p><%= twitter[:text] %></p>
 										<ul class="actions">
 											<li><a href="<%= twitter[:url] %>" class="button alt" target="_blank">Details</a></li>
 										</ul>

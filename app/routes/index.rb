@@ -13,11 +13,9 @@ class GenApp < Sinatra::Base
   end
 
   post '/login' do
-    puts params
     if params[:email] == 'test@test.com' && params[:password] == '123456'
       session[:email] = params[:email]
       session[:user] = params[:email].split('@')[0]
-      puts session
       redirect '/'
     else
       redirect '/login'
@@ -25,7 +23,6 @@ class GenApp < Sinatra::Base
   end
 
   post '/register' do
-    puts params
     session[:email] = params[:email]
     session[:user]  = params[:name]
 

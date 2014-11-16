@@ -29,7 +29,6 @@ class Google_Map_Helper
   end
 
   def set_marker_map(config)
-    puts config
     location = MapLocation.new(:latitude => config['latitude'], :longitude => config['longitude'])
     map = GoogleStaticMap.new(:zoom => config['zoom'], :center => location)
 

@@ -10,7 +10,6 @@ class GenApp < Sinatra::Base
 
     @news.each do |item|
 
-      puts item.id
       google = Google_Map_Helper.new
 
       config = {"latitude" => "35.6168625", "longitude" => "139.7406247", "zoom" => 11}
@@ -19,10 +18,9 @@ class GenApp < Sinatra::Base
       @google_url = google.set_marker_map(config)
 
       twitter = Twitter_Helper.new
-      keyword = Keywords.find(item.id)
+      keyword = Keywords.find_by_news_id(item.id)
 
-      puts keyword.keyword
-      puts keyword.place
+      result = Array.new
       result = twitter.search "#{keyword.keyword} #{keyword.place}"
       if result.length == 0
         result = twitter.search keyword.keyword

@@ -20,13 +20,13 @@ class Twitter_Helper
   def search key, place = nil, count = nil
     client = self.get_client
     tarr = Array.new
-    client.search(key, result_type: "recent").take(100).each do |tweet|
+    client.search(key, result_type: "recent").take(30).each do |tweet|
       if tweet.media != nil
         tweet.media.each do |m|
           pics = nil
           url = tweet.full_text.split(' ')[-1]
           if url =~ /^http/
-            full_text = tweet.full_text.split(' ')[0...-1].join(' ').byteslice(0..79)
+            full_text = tweet.full_text.split(' ')[0...-1].join(' ')
           else
             break
           end
