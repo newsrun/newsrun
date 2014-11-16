@@ -36,9 +36,22 @@ class Rakuten_Helper
 
 end
 
-debug = true
-
-if debug
+def search_area_code_test
   helper = Rakuten_Helper.new
   puts helper.search_area_code
+end
+
+def search_gis_test
+  latitude = '35.6091172'
+  longitude = '139.7733262'
+  radius = '0.5'
+
+  helper =Rakuten_Helper.new
+  puts helper.search_gis latitude, longitude, radius
+end
+
+debug = false
+
+if debug
+  search_gis_test
 end
