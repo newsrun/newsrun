@@ -1,3 +1,3 @@
 require 'twitter'
 require_relative 'news'
-require_relative 'analyzer'
+require_relative 'keyword'

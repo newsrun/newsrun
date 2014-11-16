@@ -6,6 +6,11 @@ require_relative 'fetch_news'
 
 class News_Helper
   include FetchNews
+  attr_accessor :count
+
+  def initialize 
+    @count = 1
+  end
 
   def create_recode
     #News.create( :title=>"titleffdfdf" ) do |t|
@@ -15,7 +20,7 @@ class News_Helper
     #end
     recodes = fetch_from_asahi_api do |params|
       params.start = '1'
-      params.rows = '20'
+      params.rows = '9'
       params.q = 'Title:*祭り*'  
     end 
 
@@ -30,8 +35,31 @@ class News_Helper
           #t. = recode['']       
       end
     end
-
   end
+
+  
+  def fetch_next 
+    recodes = fetch_from_asahi_api do |params|
+      params.start = "#{@count}"
+      params.rows = '1'
+      params.q = 'Title:*祭り*'  
+    end
+    @count += 1 
+    recodes[0]
+  end
+
+
+  def store (rec)
+    News.create do |t|
+      t.Title = rec['Title']
+      t.Body = rec['Body']
+      t.Url = rec['Url']
+      t.ReleaseDate = rec['ReleaseDate']
+      t.PhotoLink = rec['PhotoLink'].to_json
+      #t. = recode['']       
+    end
+  end
+
 
   def search_all
     News.all

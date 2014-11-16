@@ -11,13 +11,13 @@ class GenApp < Sinatra::Base
     erb :news_test
   end
 
-  get '/test_analysis' do 
-  	news = News.all
-  	helper = Analysis_Helper.new
+  #get '/test_analysis' do 
+  # 	news = News.all
+  #	helper = Analysis_Helper.new#
 
-  	@keywords = news.map{ |n|
-  		helper.analyze_keywords(n.Title)
-  	}	
-  	erb :analysis_test
-  end
+  #	@keywords = news.map{ |n|
+  #		helper.analyze_keywords(n.Title)
+ # 	}	
+  #	erb :analysis_test
+  #end
 end
