@@ -94,12 +94,12 @@
 				<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h3><%= item.Title %></h3>
-						<p><%= item.ReleaseDate %></p>
+						<h3><%= "【#{item.ReleaseDate.to_date}】#{item.Title}" %></h3>
+						<p><%= "朝日新聞 #{item.ReleaseDate}" %></p>
 					</header>
 					<div class="box">
 						<span class="image featured" style="height:400px;overflow:hidden"><img src="<%= photo %>" alt="" /></span>
-						<h3>紹介</h3>
+						<h3>ニュース内容</h3>
 						<p><%= item.Body %></p>
 
 						<p>Most Related Twitters</p>
